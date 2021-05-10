@@ -13,7 +13,7 @@
     height: var(--city-height--);
     background: url(/roadside.jpeg) ;
     z-index: 1000;
-    animation: drive 2s steps(4) infinite;
+    animation: city 2s steps(10) infinite;
     -webkit-box-reflect: below 1px linear-gradient(transparent 90%, rgba(53, 52, 52, 0.533));
 }
 .sun{
@@ -76,6 +76,13 @@
 }
 
 @keyframes drive
+{
+    100%{
+        background-position: -1200px;
+    }
+}
+
+@keyframes city
 {
     100%{
         background-position: -1200px;
