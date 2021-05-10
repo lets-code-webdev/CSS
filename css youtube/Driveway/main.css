@@ -15,6 +15,15 @@
     z-index: 1000;
     animation: drive 2s steps(4) infinite;
 }
+.sun{
+    position:fixed;
+    top:10;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 20000;
+    /* animation: drive 2s steps(4) infinite; */
+}
 
 .road{
     position:absolute;
