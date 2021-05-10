@@ -1,90 +1,99 @@
+/* define variables */
 :root{
     --full-width--: 100%;
-    --city-height--: 255px;
-    --road-height--: 300px;
+    --city-height--:255px;
+    --road-height--:300px;
     --grass-height--: var(--city-height--);
 }
 
+/* city css  */
 .city{
     position:absolute;
-    top:0;
-    left: 0;
+    top:0%;
+    left:0%;
     width: var(--full-width--);
-    height: var(--city-height--);
-    background: url(/roadside.jpeg) ;
-    z-index: 1000;
+    height:var(--city-height--);
+    background: url(/roadside.jpeg);
+    z-index:1000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0004);
     animation: city 2s steps(10) infinite;
-    -webkit-box-reflect: below 1px linear-gradient(transparent 90%, rgba(53, 52, 52, 0.533));
+
 }
 .sun{
     position:sticky;
     top:10;
-    left: 50%;
+    left:50%;
     width: 100px;
     height: 100px;
-    z-index: 20000;
-    /* animation: drive 2s steps(4) infinite; */
+    z-index: 1001;
+
 }
 
+/* road css */
 .road{
     position:absolute;
-    top: 380px;
+    top:380px;
     left: 50%;
     width: var(--full-width--);
-    height: var(--road-height--);
-    display: flex;
+    height:var(--road-height--);
+    display:flex;
     transform: translate(-50%, -50%);
     background-color: rgb(70, 69, 69);
 }
 
+/* let's place the vehicles now  */
 
 .bus{
     position:absolute;
-    top:30%;
+    top: 30%;
     left: calc(50% - 150px);
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 300px; /*width = 1200px/4*/
     height: 195px;
-    background: url(/bus.png) no-repeat;
-    /* background-color: red; */
-    animation: drive 1s steps(4) infinite;
+    background: url(/bus.png);
     margin: 2em auto;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0004);
+    animation: driveway 1s steps(4) infinite;
+
 }
 
 .car{
     position:absolute;
-    top:30%;
+    top: 30%;
     left: calc(50% + 150px);
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 300px; /*width = 1200px/4*/
     height: 195px;
-    background: url(/car.png) no-repeat;
-    /* background-color: red; */
-    animation: drive 1s steps(4) infinite;
+    background: url(/car.png);
     margin: 2em auto;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    -webkit-box-reflect: below 1px linear-gradient(transparent 70%, #0004);
+    animation: driveway 1s steps(4) infinite;
+
 }
 
+
+/* lets add grass followed by shadow in each elements */
 .grass{
     position:absolute;
     top:500px;
-    left: 0;
+    left:0%;
     width: var(--full-width--);
-    height: var(--grass-height--);
-    background-color: rgb(66, 150, 26);
+    height:var(--grass-height--);
+    background-color: rgb(24, 128, 24);
+
 }
 
-@keyframes drive
+/* lets add the animation now */
+@keyframes driveway
 {
     100%{
-        background-position: -1200px;
+        background-position: -1200px; /*size in pixels for the images (sprite sheet)*/
     }
 }
 
 @keyframes city
 {
     100%{
-        background-position: -1200px;
+        background-position: -1200px; /*size in pixels for the images (sprite sheet)*/
     }
 }
