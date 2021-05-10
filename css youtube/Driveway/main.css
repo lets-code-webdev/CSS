@@ -1,0 +1,71 @@
+:root{
+    --full-width--: 100%;
+    --city-height--: 255px;
+    --road-height--: 300px;
+    --grass-height--: var(--city-height--);
+}
+
+.city{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: var(--full-width--);
+    height: var(--city-height--);
+    background: url(/roadside.jpeg) ;
+    z-index: 1000;
+    animation: drive 2s steps(4) infinite;
+}
+
+.road{
+    position:absolute;
+    top: 380px;
+    left: 50%;
+    width: var(--full-width--);
+    height: var(--road-height--);
+    display: flex;
+    transform: translate(-50%, -50%);
+    background-color: rgb(70, 69, 69);
+}
+
+
+.bus{
+    position:absolute;
+    top:40%;
+    left: calc(50% - 150px);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background: url(/bus.png) no-repeat;
+    /* background-color: red; */
+    animation: drive 1s steps(4) infinite;
+    margin: 2em auto;
+}
+
+.car{
+    position:absolute;
+    top:40%;
+    left: calc(50% + 150px);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background: url(/car.png) no-repeat;
+    /* background-color: red; */
+    animation: drive 1s steps(4) infinite;
+    margin: 2em auto;
+}
+
+.grass{
+    position:absolute;
+    top:500px;
+    left: 0;
+    width: var(--full-width--);
+    height: var(--grass-height--);
+    background-color: rgb(66, 150, 26);
+}
+
+@keyframes drive
+{
+    100%{
+        background-position: -1200px;
+    }
+}
