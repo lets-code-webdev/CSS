@@ -17,7 +17,7 @@
     -webkit-box-reflect: below 1px linear-gradient(transparent 90%, rgba(53, 52, 52, 0.533));
 }
 .sun{
-    position:fixed;
+    position:sticky;
     top:10;
     left: 50%;
     width: 100px;
@@ -44,12 +44,12 @@
     left: calc(50% - 150px);
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 200px;
+    height: 195px;
     background: url(/bus.png) no-repeat;
     /* background-color: red; */
     animation: drive 1s steps(4) infinite;
     margin: 2em auto;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(29, 28, 28, 0.267));
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
 }
 
 .car{
@@ -58,7 +58,7 @@
     left: calc(50% + 150px);
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 200px;
+    height: 195px;
     background: url(/car.png) no-repeat;
     /* background-color: red; */
     animation: drive 1s steps(4) infinite;
