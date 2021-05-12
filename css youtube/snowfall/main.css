@@ -1,0 +1,55 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.image {
+	position: relative;
+	background: url(/couple-image.jpeg) no-repeat;
+	background-size: cover;
+	background-position: center center;
+	max-width: 100%;
+	height: 110vh;
+	animation: hue-effect 5s ease-in-out infinite;
+
+}
+
+.text {
+	background-color: white;
+	color: black;
+	font-size: 5vw;
+	font-weight: bold;
+	margin: 0 auto;
+	padding: 10px;
+	width: 50%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	mix-blend-mode: screen;
+	opacity: 0.8;
+}
+
+@keyframes hue-effect {
+	0% {
+		filter: hue-rotate(30deg)
+	}
+
+	25% {
+		filter: hue-rotate(60deg)
+	}
+
+	50% {
+		filter: hue-rotate(120deg)
+	}
+
+	75% {
+		filter: hue-rotate(180deg)
+	}
+
+	100% {
+		filter: hue-rotate(270deg)
+	}
+}
