@@ -1,85 +1,101 @@
-* {
+*{
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
+	box-sizing:border-box;
 }
 
-.container {
-	position: relative;
-	display: flex;
+.container{
+	display:flex;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
+	position:relative;
+	width:100%;
 	height: 100vh;
-	overflow: hidden;
+	overflow:hidden;
+
+
 }
 
-img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.space-guy {
-	width: 25%;
-	height: 40%;
-	top: 30%;
-	left: 30%;
-	animation: animate 15s ease-in-out infinite;
-}
-
-.planet {
-	width: 40%;
-	height: 50%;
+.text{
+	background-color:white;
+	color:black;
+	font-size:5vw;
+	width:50%;
+	position:absolute;
 	top: 50%;
-	left: 60%;
-	animation: animatePlanet 25s ease-in-out infinite;
-	mix-blend-mode: exclusion;
-}
-
-.small-rocks,
-.stars {
-	filter: drop-shadow(5px 5px 4px #4444dd);
-}
-
-.small-rocks {
-	animation: animatesmallrocks 10s ease-in-out infinite;
-}
-
-h2 {
-	opacity: 0;
-	background-color: white;
-	font-size: 5vw;
-	font-weight: bold;
+	left:30%;
+	transform: translate(-50% -50%);
+	mix-blend-mode: screen;
 	margin: 0 auto;
 	padding: 10px;
-	width: 50%;
-	text-align: center;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	mix-blend-mode: screen;
-	animation: fadeIn-Out ease 10s infinite;
+	text-align:center;
+	opacity:0.5;
 }
 
-@keyframes fadeIn-Out {
-	0% {
-		opacity: 0;
-	}
+img{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
 
-	50% {
-		opacity: 0.5;
-	}
+.space-guy{
+	width:40%;
+	height:50%;
+	top:30%;
+	left:30%;
+	animation: animateSpaceGuy 15s ease-in-out infinite;
 
-	100% {
-		opacity: 0;
+}
+
+.planet{
+	width:60%;
+	height:60%;
+	top:50%;
+	left:60%;
+	mix-blend-mode: exclusion; 
+	animation: animatePlanet 20s ease-in-out infinite;
+}
+
+.stars, .rocks-small{
+	filter: drop-shadow(5px 5px 5px #4444dd);
+}
+
+.rocks-small{
+	animation: animateSmallRocks 15s ease-in-out infinite;
+}
+/* lets add animation for parallax effects */
+
+@keyframes animateSmallRocks
+{
+	0%{
+		transform: translateY(0) translateX(-50px);
+		width:80%;
+		height:80%;
+
+	}
+	50%{
+		transform: translateY(0) translateX(50px);
+		width:120%;
+		height:120%;
+	}
+	100%{
+		transform: translateY(0) translateX(-50px);
+		width:80%;
+		height:80%;
 	}
 }
 
-@keyframes animate {
+/* lets add animation to the planet and the astronaut */
+
+@keyframes animateSpaceGuy
+{
+	/* 0%{
+		transform: translateX(-500) translateY(0) rotate(20deg);
+	} */
+	/* i will quickly copy the animation i prefer */
+
 	0% {
 		transform: translateY(0px) translateX(0px) rotate(20deg);
 	}
@@ -108,7 +124,11 @@ h2 {
 	100% {
 		transform: translateY(0px) translateX(0px);
 	}
+	
 }
+
+
+/* lets add the animation for the planet */
 
 @keyframes animatePlanet {
 	0% {
@@ -148,59 +168,5 @@ h2 {
 		transform: translateY(0px) translateX(-500px);
 		width: 120%;
 		height: 120%;
-	}
-}
-
-/* 100s linear infinite; */
-}
-
-@keyframes animate {
-	0% {
-		transform: translateY(0px) translateX(0px);
-	}
-
-	20% {
-		transform: translateY(-50px) translateX(50px);
-	}
-
-	40% {
-		transform: translateY(-100px) translateX(75px);
-
-	}
-
-	60% {
-		transform: translateY(-200px) translateX(25px);
-	}
-
-	70% {
-		transform: translateY(-250px) translateX(-70px);
-	}
-
-	85% {
-		transform: translateY(-100px) translateX(-100px);
-	}
-
-	100% {
-		transform: translateY(0px) translateX(0px);
-	}
-}
-
-@keyframes animatesmallrocks {
-	0% {
-		transform: translateY(0px) translateX(-50);
-		width: 80%;
-		height: 80%;
-	}
-
-	50% {
-		transform: translateY(0px) translateX(50);
-		width: 120%;
-		height: 120%;
-	}
-
-	100% {
-		transform: translateY(0px) translateX(-50);
-		width: 80%;
-		height: 80%;
 	}
 }
