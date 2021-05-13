@@ -151,7 +151,7 @@ h2 {
 	}
 }
 
-100s linear infinite;
+/* 100s linear infinite; */
 }
 
 @keyframes animate {
