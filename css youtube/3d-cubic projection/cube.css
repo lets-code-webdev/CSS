@@ -1,0 +1,106 @@
+:root{
+    --box-coordinates--: 1.5em;
+    --box-coordinates-negative--: -1.5em;
+}
+
+*{
+    padding: 0%;
+    margin:0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom, rgba(103, 173, 238), rgb(43, 132, 216));
+    width: 100%;
+    height: 100vh;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 50em;
+    perspective-origin: top right;
+}
+
+.box-wrap{
+
+    /* background:  */
+    position: relative;
+
+}
+
+
+button{
+    position: fixed;
+    bottom: 50px;
+    left: 45%;
+    margin: 1em;
+    font-size: 0.3em;
+    border-radius: 16px;
+    border: none;
+    width: 5em;
+    height: 2em;
+    background-color: blue;
+    color: white;
+}
+
+.box{
+
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: -1.5em;
+    left:-1.5em;
+    animation: animate 10s linear infinite;
+    transform-style: preserve-3d;
+
+
+
+}
+
+
+.side{
+    /* background-color: hsla(180, 100%, 50%, 0.8); */
+    width: 100%;
+    height: 100%;
+    position:absolute;
+}
+
+.right{
+    background-color: hsla(228, 84%, 59%, 0.644);
+    transform: translateX(var(--box-coordinates--)) rotateY(90deg);
+}
+
+.left{
+    background-color: hsla(39, 100%, 50%, 0.8);
+    transform: translateX(var(--box-coordinates-negative--)) rotateY(90deg);
+}
+
+
+.top{
+    background-color: hsla(0, 100%, 50%, 0.8);
+    transform: translateY(var(--box-coordinates--)) rotateX(90deg);
+}
+
+.bottom{
+    background-color: hsla(290, 100%, 50%, 0.8);
+    transform: translateY(var(--box-coordinates-negative--)) rotateX(90deg);
+}
+
+
+
+.front{
+    background-color: hsla(69, 100%, 50%, 0.8);
+    transform: translateZ(var(--box-coordinates--));
+}
+
+.back{
+    background-color: hsla(108, 100%, 50%, 0.8);
+    transform: translateZ(var(--box-coordinates-negative--));
+}
+
+
+@keyframes animate{
+    100%{
+        transform: rotate3d(1,1,1, 360deg);
+    }
+}
